@@ -11,7 +11,138 @@ $link_color              = $this->get_customizer_setting( 'link_color' );
 $header_background_color = $this->get_customizer_setting( 'header_background_color' );
 $header_color            = $this->get_customizer_setting( 'header_color' );
 ?>
-/* Generic WP styling */
+/* From parent theme */
+
+/**************************************************************/
+/* Post Navigation */
+/**************************************************************/
+
+nav {
+    display: block
+}
+
+.post-navigation
+.posts-navigation {
+    padding: 2em 0;
+    font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    text-align: left;
+    overflow: hidden
+}
+
+.post-navigation a,
+.posts-navigation a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 1em;
+    border: 1px solid #ccc;
+    color: #000
+}
+
+.post-navigation a:focus,
+.post-navigation a:hover,
+.posts-navigation a:focus,
+.posts-navigation a:hover {
+    color: #fff;
+    border-color: #b51c35;
+    background: #b51c35
+}
+.nav-links {
+    margin: 0 auto;
+    padding: 0 .4em
+}
+.nav-previous {
+    padding-bottom: 1em
+}
+@media screen and (min-width: 900px) {
+    .nav-links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        padding: 0
+    }
+    .nav-next,
+    .nav-previous,
+    .post-navigation .nav-next,
+    .post-navigation .nav-previous,
+    .posts-navigation .nav-next,
+    .posts-navigation .nav-previous {
+        float: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        width: 48%
+    }
+    .nav-next,
+    .post-navigation .nav-next,
+    .posts-navigation .nav-next {
+        float: right;
+        text-align: right
+    }
+    .nav-previous {
+        padding-bottom: 0
+    }
+}
+.post-navigation .meta-nav {
+    display: block
+}
+@media screen and (min-width: 30em) {
+    .post-navigation {
+        padding-bottom: 1em
+    }
+}
+.post-navigation .post-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    border-bottom: 3px solid #b51c35
+}
+.post-navigation a:focus .post-title,
+.post-navigation a:hover .post-title {
+    border-bottom-color: #fff
+}
+
+/**************************************************************/
+/* Screen Reader Text
+/**************************************************************/
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden
+}
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+    clip: auto;
+    color: #000;
+    display: block;
+    font-size: 17.5px;
+    font-size: 1.09375rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000
+}
+/**************************************************************/
+/* AMP START Styling */
+/**************************************************************/
 
 html {
     font-family: sans-serif;

@@ -8,11 +8,11 @@
                 <!-- Start Dropdown-inline -->
                 <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                     <section>
-                        <header>General</header>
+                        <header>Pages</header>
                         <ul class="ampstart-dropdown-items list-reset m0 p0">
                             <li class="ampstart-dropdown-item">
-                                <a href="http://localhost:8888/amp-wp-plugin-dev/2017/07/06/ampstart-article/amp/" class="text-decoration-none">
-                                    <?php esc_html_e( 'Photo Gallery', 'amp' ); ?>
+                                <a href="http://localhost:8888/amp-wp-plugin-dev/" class="text-decoration-none">
+                                    <?php esc_html_e( 'Main Site', 'amp' ); ?>
                                 </a>
                             </li>
                         </ul>
@@ -23,6 +23,11 @@
 					<section>
 						<header>Set One</header>
 						<ul class="ampstart-dropdown-items list-reset m0 p0">
+                            <li class="ampstart-dropdown-item">
+                                <a href="http://localhost:8888/amp-wp-plugin-dev/2017/07/06/ampstart-article/amp/" class="text-decoration-none">
+									<?php esc_html_e( 'Photo Gallery', 'amp' ); ?>
+                                </a>
+                            </li>
 							<li class="ampstart-dropdown-item">
                                 <a href="http://localhost:8888/amp-wp-plugin-dev/2017/05/26/soundcloud/amp" class="text-decoration-none">
 									<?php esc_html_e( 'Soundcloud', 'amp' ); ?>
