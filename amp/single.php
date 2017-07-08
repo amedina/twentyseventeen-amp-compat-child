@@ -10,6 +10,7 @@
 	</style>
 	<script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
 	<script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 </head>
 
 <body class="<?php echo esc_attr( $this->get( 'body_class' ) ); ?>">
@@ -24,7 +25,7 @@
 		<?php $this->load_parts( array( 'featured-image' ) ); ?>
 		
 		<header class="amp-wp-article-header">
-			<h1 class="amp-wp-title"><?php echo wp_kses_data( $this->get( 'post_title' ) ); ?></h1>
+			<h1 class="entry-title amp-wp-title"><?php echo wp_kses_data( $this->get( 'post_title' ) ); ?></h1>
 			<?php $this->load_parts( apply_filters( 'amp_post_article_header_meta', array( 'meta-author', 'meta-time' ) ) ); ?>
 		</header>
 		
@@ -39,6 +40,13 @@
 		</footer>
 
     </article>
+
+    <?php
+        // If comments are open or we have at least one comment, load up the comment template.
+        if ( comments_open() || get_comments_number() ) :
+            comments_template();
+        endif;
+    ?>
 </main>
 <?php $this->load_parts( array( 'footer' ) ); ?>
 
