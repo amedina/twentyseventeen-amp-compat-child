@@ -1,28 +1,49 @@
+
+<?php
+if ( ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
+	echo '<div class="single-featured-image-header">';
+	echo get_the_post_thumbnail( get_queried_object_id(), 'twentyseventeen-featured-image' );
+	echo '</div><!-- .single-featured-image-header -->';
+endif;
+?>
+
 <main id="content" role="main" class="">
-    <article class="amp-wp-article photo-article">
-	
-	    <?php
-	    if ( is_sticky() && is_home() ) :
-		    echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
-	    endif;
-	    ?>
-     
-		<?php $this->load_parts( array( 'featured-image' ) ); ?>
+    <div class="site-content-contain">
+        <div id="content" class="site-content">
 
-        <header class="amp-wp-article-header">
-            <h1 class="entry-title amp-wp-title"><?php echo wp_kses_data( $this->get( 'post_title' ) ); ?></h1>
-			<?php $this->load_parts( apply_filters( 'amp_post_article_header_meta', array( 'meta-author', 'meta-time' ) ) ); ?>
-        </header>
+            <article class="amp-wp-article photo-article">
+                <?php
+                if ( is_sticky() && is_home() ) :
+                    echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
+                endif;
+                ?>
+                <header class="amp-wp-article-header">
+                    <?php
+                    if ( 'post' === get_post_type() ) {
+                        echo '<div class="entry-meta">';
+                        twentyseventeen_posted_on ();
+                    }
+                    echo '</div><!-- .entry-meta -->';
 
-        <div class="amp-wp-article-content">
-			<?php echo $this->get( 'post_amp_content' ); // amphtml content; no kses ?>
+                    the_title( '<h1 class="entry-title">', '</h1>' );
+                    ?>
+                </header>
+
+                <div class="entry-content amp-wp-article-content">
+                    <?php echo $this->get( 'post_amp_content' ); ?>
+                </div>
+
+                <?php amp_post_navigation(); ?>
+        
+                <footer class="amp-wp-article-footer">
+                    <?php $this->load_parts( apply_filters( 'amp_post_article_footer_meta', array( 'meta-taxonomy', 'meta-comments-link' ) ) ); ?>
+                </footer>
+
+            </article>
         </div>
-		
-		<?php amp_post_navigation(); ?>
-
-        <footer class="amp-wp-article-footer">
-			<?php $this->load_parts( apply_filters( 'amp_post_article_footer_meta', array( 'meta-taxonomy', 'meta-comments-link' ) ) ); ?>
-        </footer>
-
-    </article>
+    </div>
 </main>
+
+
+<?php //$this->load_parts( array( 'featured-image' ) ); ?>
+

@@ -3,10 +3,6 @@
 
 <?php $this->load_parts( array( 'header-amp' ) ); ?>
 
-<?php $this->load_parts( array( 'header-bar' ) ); ?>
-
-<?php $this->load_parts( array( 'side-bar' ) ); ?>
-
 <?php $this->load_parts( array( 'main-content' ) ); ?>
 
 <?php $this->load_parts( array( 'footer' ) ); ?>
