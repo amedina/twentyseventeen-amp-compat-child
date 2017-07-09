@@ -141,9 +141,7 @@ nav {
     z-index: 100000
 }
 
-/*
- byline
-*/
+/* byline */
 .byline,
 .updated:not(.published) {
     display: not;
@@ -163,6 +161,12 @@ nav {
     font-size: 26px;
     font-size: 1.625rem;
 }
+
+.single-featured-image-header {
+    background-color: #fafafa;
+    border-bottom: 1px solid #eee;
+}
+
 /**************************************************************
 **************************************************************/
 /* AMP START Styling */
