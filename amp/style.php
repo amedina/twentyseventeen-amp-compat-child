@@ -160,7 +160,7 @@ nav {
 
 .entry-title,
 .entry-title {
-    font-size: 26px;x`
+    font-size: 26px;
     font-size: 1.625rem;
 }
 /**************************************************************
