@@ -140,6 +140,29 @@ nav {
     width: auto;
     z-index: 100000
 }
+
+/*
+ byline
+*/
+.byline,
+.updated:not(.published) {
+    display: not;
+}
+
+.entry-title {
+    color: #222;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.entry-title,
+.entry-title {
+    font-size: 26px;x`
+    font-size: 1.625rem;
+}
 /**************************************************************
 **************************************************************/
 /* AMP START Styling */
