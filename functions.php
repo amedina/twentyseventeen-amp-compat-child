@@ -35,15 +35,16 @@ function amp_pre_get_posts( $query ) {
  *
  * This is needed to prevent validation errors due to invalid URL protocol
  */
-function secure_gravatar_url( $url ) {
+function secure_url_protocol( $url ) {
 	return preg_replace( "/^http:/i", "https:", $url );
 }
-add_filter( 'amp_secure_link', 'secure_gravatar_url' );
+add_filter( 'amp_secure_link', 'secure_url_protocol' );
 
 function amp_avatar_image( $avatar) {
 	return preg_replace( "/^<img/i", "<amp-img", $avatar );
 }
 add_filter( 'get_avatar', 'amp_avatar_image', 10, 1);
+
 
 /**
  * @param $link
