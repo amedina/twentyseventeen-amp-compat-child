@@ -1,9 +1,10 @@
 <?php
     $post_author = $this->get( 'post_author' );
+    $author_link = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
     $byline = sprintf(
         /* translators: %s: post author */
         __( 'by %s', 'amp' ),
-        '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $post_author->get( 'display_name' ) . '</a></span>'
+        '<span class="author vcard"><a class="url fn n" href="' . $author_link . '">' . $post_author->get( 'display_name' ) . '</a></span>'
     );
 ?>
 <?php if ( $post_author ) : ?>
