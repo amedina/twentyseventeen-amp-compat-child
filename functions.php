@@ -1,17 +1,39 @@
 <?php
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function amp_sidebar_widgets_init() {
 
+	register_sidebar( array(
+		'name'          => __( 'AMP Sidebar 1', 'amp' ),
+		'id'            => 'amp-sidebar-1',
+		'description'   => __( 'Add widgets here to appear in sidebar.', 'amp' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'AMP Sidebar  2', 'amp' ),
+		'id'            => 'amp-sidebar-2',
+		'description'   => __( 'Add widgets here to appear in sidebar.', 'amp' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'amp_sidebar_widgets_init' );
 /**
  * Post navigation links
  */
 function amp_post_navigation() {
-
 	the_post_navigation( array(
-		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'amp' ) . '</span> ' .
-		               '<span class="post-title">%title</span>',
-		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'amp' ) . '</span> ' .
-		               '<span class="post-title">%title</span>',
-		'screen_reader_text' => ''
-
+		'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'PPrevious', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
+		'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
 	) );
 }
 
@@ -26,7 +48,7 @@ function amp_pre_get_posts( $query ) {
 		$query->set( 'amp', 1 );
 	}
 }
-//add_action( 'pre_get_posts', 'amp_pre_get_posts' );
+add_action( 'pre_get_posts', 'amp_pre_get_posts' );
 
 /**
  * @param $url
@@ -83,3 +105,4 @@ function comment_reply_callback($link, $args, $comment, $post) {
 	return $link;
 }
 add_filter( 'comment_reply_link', 'comment_reply_callback', 10, 4);
+

@@ -32,18 +32,16 @@ endif;
                 <div class="entry-content amp-wp-article-content">
                     <?php echo $this->get( 'post_amp_content' ); ?>
                 </div>
-
-                <?php amp_post_navigation(); ?>
         
                 <footer class="amp-wp-article-footer">
-                    <?php $this->load_parts( apply_filters( 'amp_post_article_footer_meta', array( 'meta-taxonomy', 'meta-comments-link' ) ) ); ?>
+	                <?php twentyseventeen_entry_footer(); ?>
                 </footer>
+
+	            <?php amp_post_navigation(); ?>
 
             </article>
         </div>
     </div>
 </main>
 
-
-<?php //$this->load_parts( array( 'featured-image' ) ); ?>
 

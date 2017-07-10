@@ -12,7 +12,7 @@
 
 <body class="<?php echo esc_attr( $this->get( 'body_class' ) ); ?>">
 
-<?php $this->load_parts( array( 'side-bar' ) ); ?>
+<?php $this->load_parts( array( 'sidebar-amp' ) ); ?>
 <?php $this->load_parts( array( 'header-bar' ) ); ?>
 
 <div id="page" class="site">

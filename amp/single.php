@@ -5,7 +5,7 @@
 
 <?php $this->load_parts( array( 'main-content' ) ); ?>
 
-<?php $this->load_parts( array( 'footer' ) ); ?>
+<?php $this->load_parts( array( 'footer-amp' ) ); ?>
 
 <?php do_action( 'amp_post_template_footer', $this ); ?>
 
