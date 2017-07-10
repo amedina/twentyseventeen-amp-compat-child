@@ -36,14 +36,20 @@ function amp_pre_get_posts( $query ) {
  * This is needed to prevent validation errors due to invalid URL protocol
  */
 function secure_url_protocol( $url ) {
-	return preg_replace( "/^http:/i", "https:", $url );
+	return preg_replace( "/http:/i", "https:", $url );
 }
 add_filter( 'amp_secure_link', 'secure_url_protocol' );
 
-function amp_avatar_image( $avatar) {
-	return preg_replace( "/^<img/i", "<amp-img", $avatar );
+function amp_image( $img ) {
+
+	if ( get_query_var( 'amp', false ) ) {
+		$img = preg_replace( "/<img/i", "<amp-img", $img );
+	}
+
+	return $img;
 }
-add_filter( 'get_avatar', 'amp_avatar_image', 10, 1);
+add_filter( 'get_avatar', 'amp_image', 10, 1);
+add_filter( 'post_thumbnail_html', 'amp_image', 10,  5);
 
 
 /**
