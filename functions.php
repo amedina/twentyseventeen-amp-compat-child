@@ -36,7 +36,11 @@ function amp_pre_get_posts( $query ) {
  * This is needed to prevent validation errors due to invalid URL protocol
  */
 function secure_url_protocol( $url ) {
-	return preg_replace( "/http:/i", "https:", $url );
+	if ( get_query_var( 'amp', false ) ) {
+		$url = preg_replace ( "/http:/i", "https:", $url );
+	}
+
+	return $url;
 }
 add_filter( 'amp_secure_link', 'secure_url_protocol' );
 
