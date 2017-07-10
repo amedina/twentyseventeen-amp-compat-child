@@ -167,6 +167,12 @@ nav {
     border-bottom: 1px solid #eee;
 }
 
+
+.site-content {
+    padding: 5.5em 0 0;
+}
+
+
 /**************************************************************
 **************************************************************/
 /* AMP START Styling */
@@ -1249,10 +1255,7 @@ main {
     max-width: 700px;
     margin: 0 auto
 }
-p {
-    padding: 0;
-    margin: 0
-}
+
 .ampstart-accent {
     color: #003f93
 }
