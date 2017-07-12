@@ -27,9 +27,9 @@
     </div><!-- .site-content-contain -->
 </div><!-- #page -->
 
-<!--TODO Check (@amedina): this function enables a hook for adding scripts that invalidate AMP -->
-<!--TODO (@amedina): figure out how to control the output of this action-->
-<?php //wp_footer(); ?>
+<?php
+    twentyseventeen_include_svg_icons();
+?>
 
 </body>
 </html>
