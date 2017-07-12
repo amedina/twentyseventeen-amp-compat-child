@@ -10,14 +10,15 @@
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
 </head>
 
-<body class="<?php echo esc_attr( $this->get( 'body_class' ) ); ?>">
+<body class="<?php echo esc_attr( $this->get( 'body_class' ) ); ?> has-header-image">
 
 <?php $this->load_parts( array( 'sidebar-amp' ) ); ?>
 <?php $this->load_parts( array( 'header-bar' ) ); ?>
 
 <div id="page" class="site">
 
-
-
-
-
+    <header id="masthead" class="site-header" role="banner">
+		<?php
+		    $this->load_parts( array( 'header-image' ) );
+		?>
+    </header><!-- #masthead -->
