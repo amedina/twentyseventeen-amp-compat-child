@@ -109,7 +109,8 @@ add_filter( 'amp_secure_link', 'secure_url_protocol' );
 function amp_image( $img ) {
 	if ( get_query_var( 'amp', false ) ) {
 		$img = preg_replace( "/<img/i", "<amp-img", $img );
-		$img = preg_replace ( "/http:/i", "https:", $img );
+		// TODO (@amedina): this filter does not work; need to enable SSL properly
+		$img = preg_replace ( "/http:/i", "http:", $img );
 	}
 
 	return $img;
